@@ -1,0 +1,46 @@
+.star-rating {
+  display: flex;
+  position: relative;
+}
+
+.star-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.star-rating .active {
+  color: gold;
+  transition: transform 0.2s;
+}
+
+.star-rating .inactive {
+  color: grey;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.star-rating .active:hover,
+.star-rating .inactive:hover {
+  transform: scale(1.2);
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position the tooltip above the star */
+  left: 50%;
+  margin-left: -10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.star-wrapper:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
